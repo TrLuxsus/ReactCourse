@@ -2,15 +2,11 @@ import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-    let postsData = [
-        {id:1, message: "Hi, how are you?", likesCount: 2},
-        {id:2, message: "Hola", likesCount: 5},
-        {id:3, message: "It\'s my first post", likesCount: 3},
-    ];
-
-    let postsElements = postsData.map( (p) => (<Post message={p.message} likesCount={p.likesCount}/>))
+    let postsElements = props.postsData.map( (p) =>
+        (<Post message={p.message}
+               likesCount={p.likesCount} postImage={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.S0HIURGiO0YtLiB9-4vZ_wHaCl%26pid%3DApi&f=1"}/>))
 
     return (
         <div className={s.postsBlock}>
