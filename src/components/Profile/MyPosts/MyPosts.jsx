@@ -4,19 +4,28 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let postsElements = props.postsData.map( (p) =>
+    let postsElements = props.postsData.map((p) =>
         (<Post message={p.message}
-               likesCount={p.likesCount} postImage={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.S0HIURGiO0YtLiB9-4vZ_wHaCl%26pid%3DApi&f=1"}/>))
+               likesCount={p.likesCount}
+               postImage={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.S0HIURGiO0YtLiB9-4vZ_wHaCl%26pid%3DApi&f=1"}/>))
+
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = "";
+    }
 
     return (
         <div className={s.postsBlock}>
             <h3>posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}>Your post</textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div className={s.posts}>
