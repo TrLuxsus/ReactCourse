@@ -25,7 +25,8 @@ const App = (props) => {
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
                     <Route path='/profile'
-                           render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                           render={() => <Profile state={props.state.profilePage} addPost={props.addPost}
+                                                  updateNewPostText={props.updateNewPostText}/>}/>
                 </div>
             </div>
         </BrowserRouter>
