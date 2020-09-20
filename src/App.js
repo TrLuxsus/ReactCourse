@@ -12,7 +12,10 @@ import Settings from "./components/Settings/Settings";
 
 
 const App = (props) => {
-    console.log(props.state);
+
+    console.log("App props\n");
+    console.log(props);
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -25,8 +28,7 @@ const App = (props) => {
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
                     <Route path='/profile'
-                           render={() => <Profile state={props.state.profilePage} addPost={props.addPost}
-                                                  updateNewPostText={props.updateNewPostText}/>}/>
+                           render={() => <Profile state={props.state.profilePage} dispatch={props.dispatch}/>}/>
                 </div>
             </div>
         </BrowserRouter>
