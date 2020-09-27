@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -13,8 +12,7 @@ import Settings from "./components/Settings/Settings";
 
 const App = (props) => {
 
-    console.log("App props\n");
-    console.log(props);
+    debugger;
 
     return (
         <BrowserRouter>

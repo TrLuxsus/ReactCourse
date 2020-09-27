@@ -32,6 +32,7 @@ let store = {
     },
 
     getState() {
+        debugger;
         return this._state;
     },
     subscribe(observer) {
@@ -48,5 +49,5 @@ let store = {
     }
 }
 
-export default store;
+// export default store;
 window.store = store;
